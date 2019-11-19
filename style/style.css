@@ -1,15 +1,23 @@
 /* Variables */
 :root {
-    --body-background-color: #C7DCE5;
-    --header-color: #D4D7D9;
-    --bio-color: #C1C4C6;
-    --projects-color: #E3E3E3;
-    --contact-color:#AEB0B2;
+    --body-background-color: #FEFBFA;
+    --header-color: #FEF5F5;
+    --bio-color: #F6DCD2;
+    --projects-color: #FCF5F2;
+    --projects-img-border-color:#8A8684;
+    --contact-color:#ECF3E1;
+
+
+    --text-header-color: #473636;
+    --text-bio-color: #372B2B;
+    --text-projects-color: #372B2B;
+    --text-contact-color: #231B1B;
+    --text-a-hover-color: #81857B;
 
     --opensans: 'Open Sans', sans serif;
     --roboto: 'Roboto', sans-serif;
     --montserrat: 'Montserrat', sans-serif;
-    --playfair: 'Playfair Display', serif;
+    --playfair-display: 'Playfair Display', serif;
 
     --min-width: 300px;
     --max-width: 1600px;
@@ -19,7 +27,7 @@ body {
     box-sizing: border-box;
     margin: 0px;
     background-color: var(--body-background-color);
-    font-family: var(--roboto);
+    font-family: var(--opensans);
 }
 
 .main-container {
@@ -54,6 +62,138 @@ footer {
 }
 
 
+/* START FONTS - FULL SIZE */
+
+a, a:visited {
+    font-size: 16px;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+a:hover {
+    font-size: 600;
+}
+
+
+header {
+    font-family: var(--montserrat);
+    color: var(--text-header-color);
+}
+
+span.name {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 60px;
+}
+
+span.title {
+    font-size: 22px;
+    margin-left: 120px;
+}
+
+nav > a, a:visited {
+    color: var(--text-header-color);
+}
+
+nav > a:hover {
+    color: var(--text-a-hover-color);
+}
+
+#bio {
+    font-family: var(--montserrat);
+    color: var(--text-bio-color);
+}
+
+p.heading-name {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+p.heading-name > span {
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 60px;
+}
+
+p.heading-title {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+span.heading-important {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+p.bio-text {
+    font-family: var(--opensans);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 1.5px;
+}
+
+#projects {
+    font-family: var(--opensans);
+    color: var(--text-projects-color);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+}
+
+div.projects-title {
+    font-family: var(--montserrat);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+#projects > h3 {
+    font-family: var(--montserrat);
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+.project-links-container > a, a:visited {
+    
+    font-family: var(--montserrat);
+    color: var(--text-projects-color);
+}
+
+.project-links-container > a:hover {
+    
+    font-family: var(--montserrat);
+    color: var(--text-a-hover-color);
+}
+
+footer {
+    font-family: var(--montserrat);
+    color: var(--text-contact-color);
+}
+
+.footer-content > a, a:visited {
+    color: var(--text-contact-color);
+}
+
+.footer-content > a:hover {
+    color: var(--text-a-hover-color);
+}
+
+.footer-content > a[href^="mailto"] {
+    color: var(--text-contact-color);
+}
+
+.footer-content > a[href^="mailto"]:hover {
+    color: var(--text-a-hover-color);
+} 
+
+/* END FONTS - FULL SIZE */
+
+
 /* - START FULL SIZE POSITIONING------------------------------- */
 
 header, 
@@ -77,7 +217,7 @@ header{
 }
 
 nav > a {
-    /*border: 1px solid cyan;*/
+    /* border: 1px solid cyan; */
     margin: 5px 50px;
 }
 
@@ -132,6 +272,7 @@ section#bio {
 
 .project-img {
     max-width: 500px;
+    border: 1px solid var(--projects-img-border-color);
     border-radius: 15px;
 }
 
@@ -173,7 +314,51 @@ section#bio {
 
 /* - START MID SIZE POSITIONING------------------------------- */
 
-@media screen and (min-width: 415px) and (max-width: 750px) { 
+/* Reposition navbar under logo */
+@media screen and (min-width: 750px) and (max-width: 920px) { 
+    
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    nav {
+        align-items: center;
+        margin: 10px auto 10px auto;
+    }
+}
+
+/* center all header in a column */
+@media screen and (max-width: 500px) {
+    
+    header {
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    p.logo {
+        /* border: 1px dotted green; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    span.title {
+        /* border: 1px solid red; */
+        margin-left: 0px;
+    }
+    
+    nav {
+        /* border: 1px solid orange; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 415px) and (max-width: 750px) {
     header {
         display: flex;
         flex-direction: column;
@@ -212,7 +397,7 @@ section#bio {
 
 /* - START SMALL SIZE POSITIONING------------------------------- */
 
-@media screen and (max-width: 415px) { 
+@media screen and (max-width: 420px) { 
     header, 
     .logo, 
     nav, 
@@ -229,6 +414,17 @@ section#bio {
         margin: 10px auto 10px auto;
     }
 
+    span.name {
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    span#heading-name {
+        display: flex;
+        flex-direction: column;
+        font-size: 30px;
+    }
+
 
     nav > a {
         /*border: 1px solid cyan;*/
@@ -236,14 +432,14 @@ section#bio {
     }
 
     .heading {
-        /*border: 1px solid lightgreen;*/
-        margin: 25px 15px 0px 15px;
+        /* border: 1px solid lightgreen; */
+        margin: 15px 25px 25px 25px;
         width: auto;
     }
 
     .container-bio {
-        /*border: 1px solid purple;*/
-        margin: 15px 15px 25px 15px;
+        /* border: 1px solid purple; */
+        margin: 15px 25px 25px 25px;
         width: auto;
     }
     
