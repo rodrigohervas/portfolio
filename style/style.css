@@ -1,17 +1,18 @@
 /* Variables */
 :root {
+    
     --body-background-color: #FEFBFA;
-    --header-color: #FEF5F5;
-    --bio-color: #F6DCD2;
-    --projects-color: #FCF5F2;
+    --header-color: #000000;
+    --bio-color: #9FD6FF;
+    --projects-color: #F5F9FD;
+    --project-box-color: rgba(245,249,253, 0.8);
     --projects-img-border-color:#8A8684;
-    --contact-color:#ECF3E1;
+    --contact-color: #000000;
 
-
-    --text-header-color: #473636;
-    --text-bio-color: #372B2B;
+    --text-header-color: #EDFBF0;
+    --text-bio-color: #110D0D;
     --text-projects-color: #372B2B;
-    --text-contact-color: #231B1B;
+    --text-contact-color:#EDFBF0;
     --text-a-hover-color: #81857B;
 
     --opensans: 'Open Sans', sans serif;
@@ -49,11 +50,26 @@ main {
 }
 
 section#bio {
-    background: var(--bio-color);
+    background-image: url("../img/code-compressed.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: var(--bio-color);
 }
 
 section#projects {
-    background: var(--projects-color);
+    background-image: url("../img/schedule-compressed.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: var(--projects-color);
+}
+
+div > .project-container {
+    background-color: var(--project-box-color);
+    border-radius: 15px;
 }
 
 footer {
@@ -64,17 +80,12 @@ footer {
 
 /* START FONTS - FULL SIZE */
 
-a, a:visited {
+a:link, a:visited, a:hover {
     font-size: 16px;
     text-decoration: none;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     font-weight: 600;
 }
-
-a:hover {
-    font-size: 600;
-}
-
 
 header {
     font-family: var(--montserrat);
@@ -158,15 +169,11 @@ div.projects-title {
     letter-spacing: 4px;
 }
 
-.project-links-container > a, a:visited {
-    
-    font-family: var(--montserrat);
+div > .project-links-container > a, a:visited {
     color: var(--text-projects-color);
 }
 
-.project-links-container > a:hover {
-    
-    font-family: var(--montserrat);
+div > .project-links-container > a:hover {
     color: var(--text-a-hover-color);
 }
 
