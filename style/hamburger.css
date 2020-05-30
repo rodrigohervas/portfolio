@@ -1,6 +1,6 @@
 
 /* Menu - on small screen hide menu to right of viewer */
-nav {
+.menu {
     position: absolute;
     right: -700px;
 }
@@ -36,7 +36,7 @@ nav {
     /* position under nav bar  */
     position: absolute;
     top: var(--nav-height-sm);
-    right: 0px;
+    right: 0px !important;
     width: var(--med-width);
     padding: 10px 0;
 
@@ -96,9 +96,9 @@ nav {
 @media screen and (min-width: 1065px) {
     
     /* Menu bar */
-    nav {
+   .menu {
         /* show menu */
-        position: absolute;
+        position: static;
         right: 75px;
 
         /* position menu */
@@ -107,6 +107,13 @@ nav {
         justify-content: space-between;
         align-items: center;
         transition: all 0.7s ease 0s;
+    }
+
+    .showMenu {
+        top: var(--nav-height-sm);
+        width: auto;
+        right: 0;
+        padding: 0;
     }
     
     /* hide hamburger */

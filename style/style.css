@@ -66,6 +66,7 @@ header {
     align-items: center;
 
     position: fixed;
+    z-index: 1; /* prevents overflow of project divs over header */
     width: var(--max-width);
     
     background: var(--header-color);
@@ -140,16 +141,32 @@ section#bio {
     color: var(--text-bio-color);
 }
 
-/* Bio section container */
-.container-bio {
-    margin: 15px 25px 25px 25px;
-    width: 75%;
-}
-
 /* Bio heading (title phrase) */
 .heading {
     margin: 50px 15px 25px 15px;
     width: 75%;
+
+    /* Bio.heading loading animation */
+    position: relative;
+    top: 0;
+    left: -1500px;
+    animation-name: loadFromLeft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+/* Animation keyframes */
+@keyframes loadFromLeft {
+    0% {
+        position: relative;
+        top: 0;
+        left: -1500px;
+    }
+    100% {
+        position: flex;
+        top: 0;
+        left: 0px;
+    }
 }
 
 /* All heading name */
@@ -177,6 +194,35 @@ p.heading-title {
 span.heading-important {
     font-size: 1.375em;
     font-weight: 600;
+}
+
+
+/* Bio descriotion text container */
+.container-bio {
+    margin: 15px 25px 25px 25px;
+    width: 75%;
+
+    /* Bio.container text loading animation */
+    position: relative;
+    top: 0;
+    right: 1500px;
+    animation-name: loadFromRight;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+/* Animation keyframes */
+@keyframes loadFromRight {
+    0% {
+        position: relative;
+        top: 0;
+        right: -1500px;
+    }
+    100% {
+        position: flex;
+        top: 0;
+        left: 0px;
+    }
 }
 
 /* heading Bio text */
@@ -236,6 +282,13 @@ section#projects {
     margin: 10px 15px 20px 15px;
     max-width: 500px;
     min-height: 580px;
+
+    transition: all 0.3s ease 0s;
+}
+
+.project-container:hover {
+    box-shadow: 2px 2px 5px 0px rgb(201, 200, 202);
+    transform: translate(2px, 2px);
 }
 
 /* project image container */

@@ -9,7 +9,7 @@ const handleClick = (name) => {
     element.classList.toggle('rotation');
 
     /* Menu visibility on click */
-    const nav = document.querySelector('nav');
+    const nav = document.querySelector('.menu');
     nav.classList.toggle('showMenu');
 };
 
@@ -21,12 +21,12 @@ const handleClick = (name) => {
 const closeMenu = () => {
 
     // if nav has class showMenu, width is small, 
-    // and nav should be shown as dropdown. 
+    // nav should be shown as dropdown. 
     // Else, don't do anything
-    const element = document.querySelector('nav');
-    if(element.classList.value === 'showMenu') {
+    const nav = document.querySelector('.menu');
+    if(nav.classList[1] === 'showMenu') {
         /* hide menu on click */
-        const nav = document.querySelector('nav');
+        // const nav = document.querySelector('nav');
         nav.classList.toggle('showMenu');
 
         /* rotate back hamburger */
